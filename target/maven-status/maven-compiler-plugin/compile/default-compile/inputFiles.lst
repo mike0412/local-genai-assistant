@@ -1,0 +1,11 @@
+D:\code\eclipse-workspace\local-genai-assistant\src\main\java\ai\agent\SimpleAgent.java
+D:\code\eclipse-workspace\local-genai-assistant\src\main\java\ai\App.java
+D:\code\eclipse-workspace\local-genai-assistant\src\main\java\ai\config\AiConfig.java
+D:\code\eclipse-workspace\local-genai-assistant\src\main\java\ai\llm\LlmClient.java
+D:\code\eclipse-workspace\local-genai-assistant\src\main\java\ai\llm\OllamaClient.java
+D:\code\eclipse-workspace\local-genai-assistant\src\main\java\ai\llm\OpenAiClient.java
+D:\code\eclipse-workspace\local-genai-assistant\src\main\java\ai\prompt\PromptTemplate.java
+D:\code\eclipse-workspace\local-genai-assistant\src\main\java\ai\prompt\SystemPrompts.java
+D:\code\eclipse-workspace\local-genai-assistant\src\main\java\ai\tool\TestCaseTool.java
+D:\code\eclipse-workspace\local-genai-assistant\src\main\java\ai\tool\Tool.java
+D:\code\eclipse-workspace\local-genai-assistant\src\main\java\ai\util\JsonUtil.java

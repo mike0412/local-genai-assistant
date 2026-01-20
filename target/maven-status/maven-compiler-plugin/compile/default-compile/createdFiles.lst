@@ -1,0 +1,11 @@
+ai\agent\SimpleAgent.class
+ai\llm\LlmClient.class
+ai\App.class
+ai\llm\OllamaClient.class
+ai\tool\Tool.class
+ai\prompt\SystemPrompts.class
+ai\tool\TestCaseTool.class
+ai\llm\OpenAiClient.class
+ai\util\JsonUtil.class
+ai\prompt\PromptTemplate.class
+ai\config\AiConfig.class
