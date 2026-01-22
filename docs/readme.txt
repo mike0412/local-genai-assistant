@@ -98,3 +98,9 @@ Enum
 1️⃣ JsonUtil：提纯 Ollama 输出
 2️⃣ TestCaseTool：结构化测试用例
 3️⃣ AgentTest：给 AI 加回归测试
+
+1-22建立了agent-llm-prompt的架构，
+testcase定义测试用例模板，App作为程序入口，
+agent做任务调度和决策，config管理llm，
+llm接口实现各种大模型的即插即用。
+tool用以扩展，agent可以扩展。
