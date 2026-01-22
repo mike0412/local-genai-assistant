@@ -1,5 +1,6 @@
 package ai.llm;
 
+import ai.util.JsonUtil;
 import java.net.http.*;
 import java.net.URI;
 
@@ -33,12 +34,14 @@ public class OllamaClient implements LlmClient {
             HttpClient client = HttpClient.newHttpClient();
             HttpResponse<String> response =
                     client.send(request, HttpResponse.BodyHandlers.ofString());
-
-            return response.body();
+            
+            //key: only return pure text
+            return JsonUtil.extractResponse(response.body());
 
         } catch (Exception e) {
             throw new RuntimeException("Ollama request failed", e);
         }
     }
 }
+
 
