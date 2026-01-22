@@ -36,7 +36,7 @@ public class OllamaClient implements LlmClient {
                     client.send(request, HttpResponse.BodyHandlers.ofString());
             
             //key: only return pure text
-            return JsonUtil.extractResponse(response.body());
+            return response.body();
 
         } catch (Exception e) {
             throw new RuntimeException("Ollama request failed", e);

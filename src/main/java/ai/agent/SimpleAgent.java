@@ -3,6 +3,10 @@ package ai.agent;
 import ai.llm.LlmClient;
 import ai.prompt.PromptTemplate;
 import ai.prompt.SystemPrompts;
+import ai.tool.TestCase;
+import ai.util.JsonUtil;
+
+import java.util.List;
 
 /*Agent：对外协作与决策层
  * Agent 的真实职责是：
@@ -31,12 +35,15 @@ public class SimpleAgent {
 		this.llm = llm;
 	}
 	
-	public String ask(String question) {
+	public List<TestCase> generateTestCases(String requirement) {
 		String prompt = PromptTemplate.build(
 				SystemPrompts.TEST_CASE_JSON,
-				question
+				requirement
 		);
-		return llm.chat(prompt);
+		
+		String raw = llm.chat(prompt);
+		
+		return JsonUtil.parseTestCases(raw);
 	}
 	
 }

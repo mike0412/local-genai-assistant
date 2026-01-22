@@ -2,15 +2,14 @@ package ai;
 
 import ai.agent.SimpleAgent;
 import ai.config.AiConfig;
-import ai.llm.LlmClient;
-import ai.llm.OllamaClient;
-import ai.llm.OpenAiClient;
+import ai.tool.TestCase;
+import java.util.List;
 
 
 /* App：启动与装配层
  * 它负责：
-决定用哪个 LLM
-创建 Agent
+决定用哪个LLM
+创建Agent
 启动流程
  */
 
@@ -20,13 +19,9 @@ public class App {
 		
 		SimpleAgent agent = new SimpleAgent(AiConfig.llmClient());
 		
-		String answer = agent.ask(
-				//"ログインページのテストケースを生成します。"
-				//"generate test cases for a login page."
-				"生成登录页面的测试用例。"
-		);
+		List<TestCase> cases = agent.generateTestCases("生成登录页面测试用例");
 		
-		System.out.println(answer);
+		cases.forEach(System.out::println);
 	}
 
 }
