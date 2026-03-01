@@ -25,7 +25,7 @@ local-genai-assistant
 └─ pom.xml              👉 Maven 配置
 运行成功
 
-已经完成了「最小可用 AI Agent 架构（MVP），工程视角看，已经具备：
+已经完成了「最小可用 AI Agent 架构（MVP），工程视角看，具备：
 | 能力                           | 状态 |
 | ---------------------------- | -- |
 | LLM 抽象（LlmClient）            | ✅  |
@@ -45,18 +45,18 @@ local-genai-assistant
 新增 JsonUtil.extractResponse(String json)
 OllamaClient 内部解析 JSON
 Agent 完全不关心协议
-👉 这是 工程化第一步
+这是 工程化第一步
 
-🚀 方向 2：把 Agent 升级为「任务型 Agent」
+方向 2：把 Agent 升级为「任务型 Agent」
 现在：
 agent.ask("Generate test cases for a login page");
 下一步可以是：
 agent.generateTestCases("login page");
 agent.reviewTestCases(text);
 agent.refineTestCases(text);
-👉 从「聊天」变成「能力」
+从「聊天」变成「能力」
 
-🚀 方向 3：实现你的第一个 Tool（强烈推荐）
+方向 3：实现你的第一个 Tool（强烈推荐）
 你已经留了：
 ai.tool.TestCaseTool
 可以让 Agent：
@@ -64,26 +64,26 @@ ai.tool.TestCaseTool
 Tool 负责结构化输出
 比如：
 TestCaseTool.parse(rawText);
-👉 这是 Agent 工程 vs 聊天工具 的分水岭
+这是 Agent 工程 vs 聊天工具 的分水岭
 
-🚀 方向 4：Prompt 专业化（测试工程师专属）
+方向 4：Prompt 专业化（测试工程师专属）
 现在 System Prompt 是通用的：
 You are a senior software test engineer
 你可以拆成：
 TEST_CASE_GENERATOR
 TEST_CASE_REVIEWER
 NEGATIVE_CASE_EXPERT
-👉 一个 Agent，多种人格（非常实用）
+一个 Agent，多种人格（非常实用）
 
-🚀 方向 5：加第一个「真实测试」
-你现在 mvn test 是空的
+方向 5：加第一个「真实测试」
+现在 mvn test 是空的
 下一步可以加：
 @Test
 void should_generate_test_cases() {
     String result = agent.ask(...);
     assert result.contains("Test Case");
 }
-👉 这是 AI 工程的自动回归测试
+这是 AI 工程的自动回归测试
 
 🚀 方向 6（进阶）：生成代码而不是文本
 终极形态之一：
@@ -94,10 +94,10 @@ JUnit Test
 Enum
 你前面做的 Selenium 架构，正好可以喂给 AI
 
-✅ 推荐顺序（3 步）
-1️⃣ JsonUtil：提纯 Ollama 输出
-2️⃣ TestCaseTool：结构化测试用例
-3️⃣ AgentTest：给 AI 加回归测试
+推荐顺序（3 步）
+1️ JsonUtil：提纯 Ollama 输出
+2️ TestCaseTool：结构化测试用例
+3️ AgentTest：给 AI 加回归测试
 
 1-22建立了agent-llm-prompt的架构，
 testcase定义测试用例模板，App作为程序入口，

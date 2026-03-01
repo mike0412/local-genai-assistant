@@ -23,8 +23,7 @@ Agent 不直接干活，它是「指挥官 / 调度者」。
 
 现在的 SimpleAgent 正处于：
 Single-step Agent（单步代理）
-这是非常正确的第一阶段。
-
+非常正确的第一阶段。
  */
 
 public class SimpleAgent {
